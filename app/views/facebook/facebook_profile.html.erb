@@ -3,8 +3,10 @@
     <div class="thumbnail">
       <img src="<%= @picture %>" style="float: left;margin: 5px;">
       <h4><%= @profile["name"] %></h4>
-      <h4><%= @profile["location"]["name"] %></h4>
-      <p>Work @<%= @profile["work"][0]["employer"]["name"] %> as <%= @profile["work"][0]["position"]["name"] %></p>
+      <% if false %>
+        <h4><%= @profile["location"]["name"] %></h4>
+        <p>Work @<%= @profile["work"][0]["employer"]["name"] %> as <%= @profile["work"][0]["position"]["name"] %></p>
+      <% end %>
     </div>
   </div>
 </div>
@@ -20,7 +22,9 @@
         <% @feed.each do |f| %>
           <tr>
             <td><%= f["story"] %></td>
-            <td><%= f["story_tags"]["19"][0]["name"] %></td>
+            <% if false %>
+              <td><%= f["story_tags"]["19"][0]["name"] %></td>
+            <% end %>
           </tr>
       <% end %>
       <% feed_next_page = @feed.next_page %>
